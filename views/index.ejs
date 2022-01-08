@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weatherly</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="icon" type="image/x-icon" href="/icons/favicon.ico" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="weather-icon"><img src="/icons/weatherly_logo.png" alt="" ></div>
+    </header>
+    <div class="weather-title">
+      <h1>Weather<span>ly</span></h1>
+      <p>View the current weather for your city</p>
+    </div>
+    <form action="/" method="POST">
+      <input type="text" name="city" class="ghost-input" placeholder="Enter a city">
+    </form> 
+
+    <div class="result">
+      <% if(temp !== null)  {%>
+        <h1 class="temp"><%= temp %></h1>
+      <% } %>
+
+      <div class="icon-des">
+        <% if(icon !== null)  {%>
+          <img class="icon" src="http://openweathermap.org/img/w/<%= icon %>.png" alt="">
+        <% } %>
+        <% if(des !== null)  {%>
+          <h3><%= des %></h3>
+        <% } %>
+      </div>
+
+      <% if(city !== null)  {%>
+        <p class="city"><%= city %></p>
+      <% } %>
+      
+    </div>
+    <div class="container">Copyright &copy; Weatherly 2022</div>
+  </div>
+</body>
+</html>
